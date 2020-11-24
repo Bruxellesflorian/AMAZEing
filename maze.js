@@ -1,15 +1,10 @@
 const body = document.querySelector("body")
 let lvl = 0;
 game()
-
-
-
 function game(){
 let multiline = ``
 
     if (lvl ==0){
-        
-        
          multiline = `***********.*
 *S.....**.*.T
 *****.....*.*
@@ -157,11 +152,13 @@ const moove = document.addEventListener("keydown", function(e){
         }
     }
         if(document.querySelector("body > div:nth-child("+posY_tresor+") > div.tresorDeChocopops > div")){
-            document.querySelector("body > div:nth-child(4) > div.tresorDeChocopops").removeChild(player)
+            // document.querySelector("body > div:nth-child(4) > div.tresorDeChocopops").removeChild(player)
             lvl++
-            body.innerHTML =""
+            alert("ouep")
+            // body.innerHTML =""
             console.log("posY->",posY);
-            game();
+            multiline = ""
+            // game();
              
         }       
 })}
