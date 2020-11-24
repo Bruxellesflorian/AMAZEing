@@ -1,10 +1,16 @@
-
 const body = document.querySelector("body")
-//
+let lvl = 0;
+game()
 
 
-let lvl = 1;
-let multiline = `***********.*
+
+function game(){
+let multiline = ``
+
+    if (lvl ==0){
+        
+        
+         multiline = `***********.*
 *S.....**.*.T
 *****.....*.*
 *****.***.*.*
@@ -14,46 +20,31 @@ let multiline = `***********.*
 *****.*******
 *.........***
 *.******...**
-*....********
+*....********`   
+    }
+    if(lvl == 1){
+        multiline = `**********************
+*..S.................*
+********************.*
+*....................*
+*.********************
+*...................T*
 `
-// function nouvMap(){
-//     if (lvl ==0){
-//         let multiline = `***********.*
-//         *S.....**.*.T
-//         *****.....*.*
-//         *****.***.*.*
-//         *****.*****.*
-//         *****.*****.*
-//         *****.......*
-//         *****.*******
-//         *.........***
-//         *.******...**
-//         *....********`   
-//     }
-//     if(lvl == 1){
-//         multiline = `**********************
-//         *..S.................*
-//         ********************.*
-//         *....................*
-//         *.********************
-//         *...................T*
-//         `}
-//         if(lvl == 2){
-//             `********
-//             ****S***
-//             ****.***
-//             ****.***
-//             ****.***
-//             *......*
-//             *.****.*
-//             *..***.*
-//             *..***.*
-//             **.*****
-//             *T.*****
-//             ********
-//             `
-//         }
-// }
+}
+    if(lvl == 2){
+        multiline =`********
+****S***
+****.***
+****.***
+****.***
+*......*
+*.****.*
+*..***.*
+*..***.*
+**.*****
+*T.*****
+********
+`}
 
 
 let ligne = multiline.split("\n")
@@ -67,7 +58,6 @@ for (let i = 0;i<ligne.length-1; i++){
     const line = document.createElement("div")
     line.className = "ligneEtColone"
    
-
     for(let u = 0; u < ligne[0].length; u++){
         const tile = document.createElement("div")
         const caracter = ligne[i]
@@ -87,6 +77,7 @@ for (let i = 0;i<ligne.length-1; i++){
             tile.innerHTML = ""
             stockPosX =caracter.indexOf("S") 
             stockPosY = i
+            console.log(stockPosX,stockPosY);
         }
         if(tile.innerHTML == "T"){
             tile.className = "tresorDeChocopops"
@@ -99,14 +90,16 @@ for (let i = 0;i<ligne.length-1; i++){
     
     body.appendChild(line)
 }
-const player = document.createElement("div")
+let player = document.createElement("div")
 player.className = "laBouleMagique"
 
-
 let posY = 0;
-posY += stockPosY+3
 let posX = 0;
+posY += stockPosY+3
 posX += stockPosX+1
+
+
+if(lvl == 1) { posY -= 2;document.querySelector("body").removeChild(player)}
 
 let posY_tresor=0;
 let posX_tresor=0;
@@ -151,7 +144,7 @@ const moove = document.addEventListener("keydown", function(e){
         }
         
     if(e.code == "ArrowUp"){
-        
+
         if(posY >= 4){
             posY--
             console.log(posY);
@@ -162,19 +155,14 @@ const moove = document.addEventListener("keydown", function(e){
             document.querySelector("body > div:nth-child("+posY+") > div:nth-child("+posX+")").appendChild(player)
         }
         }
-        
     }
         if(document.querySelector("body > div:nth-child("+posY_tresor+") > div.tresorDeChocopops > div")){
+            document.querySelector("body > div:nth-child(4) > div.tresorDeChocopops").removeChild(player)
             lvl++
-            console.log(lvl);
-            alert("OKAY")
-            window.location=""
-            nouvMap()
-        }
-        
-        //________________________________________________Phase de test Stop limit de map
-        // console.log("positionY:",posY)  
-        // console.log("(ligne[0].length+posY)",ligne[0].length-posY) 
-        // console.log('(ligne.length)',ligne.length);
-        
-})
+            body.innerHTML =""
+            console.log("posY->",posY);
+            game();
+             
+        }       
+})}
+
