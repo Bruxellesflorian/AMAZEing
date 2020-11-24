@@ -49,7 +49,7 @@ console.log("Ligne Y: ",ligne.length);
 console.log("Ligne X: ",ligne[0].length);
 
 let stockPosX = 0;
-for (let i = 0;i<ligne.length-1; i++){
+for (let i = 0;i<ligne.length; i++){
     const line = document.createElement("div")
     line.className = "ligneEtColone"
    
@@ -126,7 +126,7 @@ const moove = document.addEventListener("keydown", function(e){
     if(e.code == "ArrowDown"){
         
         
-        if(posY <= ligne.length){
+        if(posY <= ligne.length+1){
             posY++
             console.log(posY);
         if(document.querySelector("body > div:nth-child("+posY+") > div:nth-child("+posX+")").classList.contains("mur")){
