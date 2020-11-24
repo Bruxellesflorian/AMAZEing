@@ -1,0 +1,48 @@
+body{
+    border: red solid 5px;
+}
+
+.ligneEtColone{
+ 
+    text-align: center;
+    background-color: rgb(235, 238, 212);
+    color :black;
+    display: flex;
+
+    
+}
+.chemin{
+    width: 50px;
+    height: 50px;
+    background-color: wheat;
+}
+.mur{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-image : url(image/mur.PNG);
+    background-size: cover;
+}
+.laBouleMagique{
+    /* position: absolute; */
+    margin: 12px;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: red;
+    transition-duration: 0.2s;
+}
+.tresorDeChocopops{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: rgb(167, 56, 182);
+    color : rgb(235, 238, 212);
+}
+.start{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: rgb(153, 182, 56);
+    color : rgb(235, 238, 212);
+}
