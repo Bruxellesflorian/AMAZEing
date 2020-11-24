@@ -1,8 +1,9 @@
+
 const body = document.querySelector("body")
+//
 
 
-
-let lvl = 0;
+let lvl = 1;
 let multiline = `***********.*
 *S.....**.*.T
 *****.....*.*
@@ -13,35 +14,48 @@ let multiline = `***********.*
 *****.*******
 *.........***
 *.******...**
-*....********`
-function nouvMap(){
-    if(lvl == 1){
-        multiline = `**********************
-        *..S.................*
-        ********************.*
-        *....................*
-        *.********************
-        *...................T*
-        `}
-        if(lvl == 2){
-            `********
-            ****S***
-            ****.***
-            ****.***
-            ****.***
-            *......*
-            *.****.*
-            *..***.*
-            *..***.*
-            **.*****
-            *T.*****
-            ********
-            `
-        }
-}
+*....********
+`
+// function nouvMap(){
+//     if (lvl ==0){
+//         let multiline = `***********.*
+//         *S.....**.*.T
+//         *****.....*.*
+//         *****.***.*.*
+//         *****.*****.*
+//         *****.*****.*
+//         *****.......*
+//         *****.*******
+//         *.........***
+//         *.******...**
+//         *....********`   
+//     }
+//     if(lvl == 1){
+//         multiline = `**********************
+//         *..S.................*
+//         ********************.*
+//         *....................*
+//         *.********************
+//         *...................T*
+//         `}
+//         if(lvl == 2){
+//             `********
+//             ****S***
+//             ****.***
+//             ****.***
+//             ****.***
+//             *......*
+//             *.****.*
+//             *..***.*
+//             *..***.*
+//             **.*****
+//             *T.*****
+//             ********
+//             `
+//         }
+// }
 
-level()
-function level(){
+
 let ligne = multiline.split("\n")
 body.style.width = (50*ligne[0].length)+"px" // Largeur du body 
 
@@ -101,10 +115,6 @@ posX_tresor += stockTresorX+1
 
 document.querySelector("body > div:nth-child("+posY+") > div:nth-child("+posX+")").appendChild(player)
 
-
-const limit = posX
-let stopeBas = false
-let stopeHaut = false
 const moove = document.addEventListener("keydown", function(e){
     
     if(e.code == "ArrowRight"){
@@ -126,9 +136,11 @@ const moove = document.addEventListener("keydown", function(e){
         }
     }
     if(e.code == "ArrowDown"){
-        stopeHaut = false
-        if(!stopeBas){
+        
+        
+        if(posY <= ligne.length){
             posY++
+            console.log(posY);
         if(document.querySelector("body > div:nth-child("+posY+") > div:nth-child("+posX+")").classList.contains("mur")){
             posY--
             document.querySelector("body > div:nth-child("+posY+") > div:nth-child("+posX+")").appendChild(player)
@@ -139,9 +151,10 @@ const moove = document.addEventListener("keydown", function(e){
         }
         
     if(e.code == "ArrowUp"){
-        stopeBas = false
-        if(!stopeHaut){
+        
+        if(posY >= 4){
             posY--
+            console.log(posY);
         if(document.querySelector("body > div:nth-child("+posY+") > div:nth-child("+posX+")").classList.contains("mur")){
             posY++
             document.querySelector("body > div:nth-child("+posY+") > div:nth-child("+posX+")").appendChild(player)
@@ -154,18 +167,14 @@ const moove = document.addEventListener("keydown", function(e){
         if(document.querySelector("body > div:nth-child("+posY_tresor+") > div.tresorDeChocopops > div")){
             lvl++
             console.log(lvl);
+            alert("OKAY")
+            window.location=""
             nouvMap()
-           
         }
-        if(posY >= (ligne.length+1)){
-            stopeBas = true
-        }  
-        if(posY <= 3){
-            stopeHaut = true
-        } 
+        
         //________________________________________________Phase de test Stop limit de map
         // console.log("positionY:",posY)  
         // console.log("(ligne[0].length+posY)",ligne[0].length-posY) 
         // console.log('(ligne.length)',ligne.length);
         
-})}
+})
