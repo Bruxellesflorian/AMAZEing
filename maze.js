@@ -201,6 +201,7 @@ const moove = document.addEventListener("keydown", function (e) {
         alert("ouep")
         window.location= ""
         lvl++
+        belek()
         // body.innerHTML = ""
         console.log("posY->", posY);
     }
