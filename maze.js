@@ -23,9 +23,8 @@ let timetime = setInterval(function () {
     }
     
 }, 1000);
-let lvl = 0;
-belek()
-function belek() {
+let lvl = 1;
+
     let multiline = ``;
 
 
@@ -69,15 +68,11 @@ function belek() {
     let ligne = multiline.split("\n");
     body.style.width = (50 * ligne[0].length) + "px"; // Largeur du body 
 
-
-
-
-
-
-// console.log("Ligne Y: ", ligne.length);
-// console.log("Ligne X: ", ligne[0].length);
-let lineEf
 let stockPosX = 0;
+let stockPosY = 0;
+let stockTresorY = 0
+let stockTresorX = 0
+ 
 
 
 for (let i = 0; i < ligne.length; i++) {
@@ -126,7 +121,7 @@ for (let i = 0; i < ligne.length; i++) {
 let posY = 0;
 let posX = 0;
 
-posY += stockPosY + 2
+posY += stockPosY + 3
 posX += stockPosX + 1
 
 
@@ -135,7 +130,7 @@ posX += stockPosX + 1
 
 let posY_tresor = 0;
 let posX_tresor = 0;
-posY_tresor += stockTresorY + 2
+posY_tresor += stockTresorY + 3
 posX_tresor += stockTresorX + 1
 
 document.querySelector("body > div:nth-child(" + posY + ") > div:nth-child(" + posX + ")").appendChild(player)
@@ -203,7 +198,7 @@ const moove = document.addEventListener("keydown", function (e) {
         console.log("posY->", posY);
     }
 })
-}
+
 body.appendChild(tilmer)
 tilmer.appendChild(miNute)
 tilmer.appendChild(seconde)
