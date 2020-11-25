@@ -72,13 +72,6 @@ function belek() {
     let ligne = multiline.split("\n");
     body.style.width = (50 * ligne[0].length) + "px"; // Largeur du body 
 
-
-
-
-
-
-// console.log("Ligne Y: ", ligne.length);
-// console.log("Ligne X: ", ligne[0].length);
 let lineEf
 let stockPosX = 0;
 
@@ -128,14 +121,8 @@ for (let i = 0; i < ligne.length; i++) {
 
 let posY = 0;
 let posX = 0;
-
 posY += stockPosY + 3
 posX += stockPosX + 1
-
-
-
-
-
 let posY_tresor = 0;
 let posX_tresor = 0;
 posY_tresor += stockTresorY + 3
