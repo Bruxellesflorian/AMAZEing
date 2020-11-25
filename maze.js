@@ -50,8 +50,7 @@ function belek() {
 ********************.*
 *....................*
 *.********************
-*...................T*
-`;
+*...................T*`;
     }
     if (lvl == 2) {
         multiline = `********
@@ -65,9 +64,7 @@ function belek() {
 *..***.*
 **.*****
 *T.*****
-********
-
-`;
+********`;
     }
     let ligne = multiline.split("\n");
     body.style.width = (50 * ligne[0].length) + "px"; // Largeur du body 
