@@ -51,5 +51,5 @@ I had to create a program capable of generating a map from a code:
 # [Link](https://bruxellesflorian.github.io/AMAZEing/)
 
 # What does it look like ? 
-![](https://raw.githubusercontent.com/Bruxellesflorian/calculette/master/Capture.PNG)
+![](https://raw.githubusercontent.com/Bruxellesflorian/AMAZEing/master/Capture.PNG)
 
