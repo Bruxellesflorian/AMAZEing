@@ -1,5 +1,6 @@
 const body = document.querySelector("body")
 
+
 const tilmer = document.createElement("div")
 
 const seconde = document.createElement("div")
@@ -65,10 +66,12 @@ function belek() {
 **.*****
 *T.*****
 ********
+
 `;
     }
     let ligne = multiline.split("\n");
     body.style.width = (50 * ligne[0].length) + "px"; // Largeur du body 
+
 
 
 
@@ -79,11 +82,13 @@ function belek() {
 let lineEf
 let stockPosX = 0;
 
+
 for (let i = 0; i < ligne.length; i++) {
     const line = document.createElement("div")
     line.className = "ligneEtColone"
 
     for (let u = 0; u < ligne[0].length; u++) {
+
         const tile = document.createElement("div")
         const caracter = ligne[i]
         tile.innerHTML = caracter[u]
@@ -104,7 +109,9 @@ for (let i = 0; i < ligne.length; i++) {
             stockPosX = caracter.indexOf("S")
             console.log("poxX", u);
             stockPosY = i
+
             console.log(stockPosX, stockPosY);
+
         }
         if (tile.innerHTML == "T") {
             tile.className = "tresorDeChocopops"
@@ -119,11 +126,12 @@ for (let i = 0; i < ligne.length; i++) {
 }
 
 
-
 let posY = 0;
 let posX = 0;
+
 posY += stockPosY + 3
 posX += stockPosX + 1
+
 
 
 
@@ -156,10 +164,12 @@ const moove = document.addEventListener("keydown", function (e) {
             document.querySelector("body > div:nth-child(" + posY + ") > div:nth-child(" + posX + ")").appendChild(player)
         }
     }
+
     if (e.code == "ArrowDown") {
 
 
         if (posY <= ligne.length+1) {
+
             posY++
             console.log(posY);
             if (document.querySelector("body > div:nth-child(" + posY + ") > div:nth-child(" + posX + ")").classList.contains("mur")) {
@@ -171,9 +181,11 @@ const moove = document.addEventListener("keydown", function (e) {
         }
     }
 
+
     if (e.code == "ArrowUp") {
 
         if (posY >= 4) {
+
             posY--
             console.log(posY);
             if (document.querySelector("body > div:nth-child(" + posY + ") > div:nth-child(" + posX + ")").classList.contains("mur")) {
@@ -184,6 +196,7 @@ const moove = document.addEventListener("keydown", function (e) {
             }
         }
     }
+
     if (document.querySelector("body > div:nth-child(" + posY_tresor + ") > div.tresorDeChocopops > div")) {
         alert("ouep")
         window.location= ""
@@ -197,3 +210,4 @@ const moove = document.addEventListener("keydown", function (e) {
 body.appendChild(tilmer)
 tilmer.appendChild(miNute)
 tilmer.appendChild(seconde)
+
