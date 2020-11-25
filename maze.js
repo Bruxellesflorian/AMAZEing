@@ -129,7 +129,7 @@ for (let i = 0; i < ligne.length; i++) {
 let posY = 0;
 let posX = 0;
 
-posY += stockPosY + 3
+posY += stockPosY + 2
 posX += stockPosX + 1
 
 
@@ -138,7 +138,7 @@ posX += stockPosX + 1
 
 let posY_tresor = 0;
 let posX_tresor = 0;
-posY_tresor += stockTresorY + 3
+posY_tresor += stockTresorY + 2
 posX_tresor += stockTresorX + 1
 
 document.querySelector("body > div:nth-child(" + posY + ") > div:nth-child(" + posX + ")").appendChild(player)
@@ -201,7 +201,6 @@ const moove = document.addEventListener("keydown", function (e) {
         alert("ouep")
         window.location= ""
         lvl++
-        
         // body.innerHTML = ""
         console.log("posY->", posY);
     }
