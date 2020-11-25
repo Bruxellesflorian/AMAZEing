@@ -23,7 +23,7 @@ let timetime = setInterval(function () {
     }
     
 }, 1000);
-let lvl = 1;
+let lvl = 0;
 
     let multiline = ``;
 
