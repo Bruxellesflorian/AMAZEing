@@ -160,7 +160,7 @@ const moove = document.addEventListener("keydown", function (e) {
     if (e.code == "ArrowDown") {
 
 
-        if (posY <= ligne.length+1) {
+        if (posY <= ligne.length) {
 
             posY++
             console.log(posY);
@@ -176,7 +176,7 @@ const moove = document.addEventListener("keydown", function (e) {
 
     if (e.code == "ArrowUp") {
 
-        if (posY >= 4) {
+        if (posY >= 3) {
 
             posY--
             console.log(posY);
